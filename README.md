@@ -23,8 +23,7 @@ It is based on the original answer to a question on Stack Overflow
 ### Enable Xml Comments
 1.  Project Properties -> Build -> Tick "XML documentation file"
 2.  Change location to **App_Data/XmlDocument.xml**
-3.  Project -> Areas -> HelpPage -> App_Start -> HelpPageConfig.cs
-4.  Uncomment line 
+3.  **Project\Areas\HelpPage\App_Start\HelpPageConfig.cs**
 
     	config.SetDocumentationProvider(new XmlDocumentationProvider(HttpContext.Current.Server.MapPath("~/App_Data/XmlDocument.xml")));
 
