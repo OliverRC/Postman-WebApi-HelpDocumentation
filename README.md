@@ -1,6 +1,9 @@
 Postman WebApi Help Documentation
 ================================
 
+### Nuget Package
+[Postman MVC WebApi Help Documentation](https://www.nuget.org/packages/Postman.WebApi.HelpDocumentation)
+
 Allows developers expose their WebAPI endpoints so they can be imported into postman as a collection
 
 It is based on the original answer to a question on Stack Overflow
