@@ -6,8 +6,9 @@ Postman WebApi Help Documentation
 
 Allows developers expose their WebAPI endpoints so they can be imported into postman as a collection
 
+#### Source 
 It is based on the original answer to a question on Stack Overflow
-[How to generate JSON Postman Collections from a WebApi2 project using WebApi HelpPages that are suitable for import](http://stackoverflow.com/questions/23158379/how-to-generate-json-postman-collections-from-a-webapi2-project-using-webapi-hel)
+[How to generate JSON Postman Collections from a WebApi2 project using WebApi HelpPages that are suitable for import](http://stackoverflow.com/questions/23158379/how-to-generate-json-postman-collections-from-a-webapi2-project-using-webapi-hel) by [rheone](http://stackoverflow.com/users/1090923/rheone)
 
 ##Getting Started
 
