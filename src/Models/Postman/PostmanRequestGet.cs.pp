@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using Newtonsoft.Json;
 
-namespace $rootnamespace$.Models
+namespace $rootnamespace$.Models.Postman
 {
-  using Newtonsoft.Json;
-
   /// <summary>
   ///     [Postman](http://getpostman.com) request object
   /// </summary>
@@ -93,7 +90,7 @@ namespace $rootnamespace$.Models
     /// <summary>
     ///     the id of the collection that the request object belongs to
     /// </summary>
-    [JsonProperty(PropertyName = "collection-id")]
+    [JsonProperty(PropertyName = "collectionId")]
     public Guid CollectionId { get; set; }
 
     /// <summary>
@@ -101,5 +98,11 @@ namespace $rootnamespace$.Models
     /// </summary>
     [JsonProperty(PropertyName = "synced")]
     public bool Synced { get; set; }
+
+    /// <summary>
+    /// Folder the request belongs too
+    /// </summary>
+    [JsonProperty(PropertyName = "folder")]
+    public Guid Folder { get; set; }
   }
 }

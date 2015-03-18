@@ -70,3 +70,7 @@ Sometimes the default values for types are not good enough so it is useful to po
         }
       }
     });
+
+### Changelog ###
+#### 1.0.0.3 ####
+- Json format updated to be work in new Postman packaged app

@@ -10,6 +10,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
 
+using $rootnamespace$.Areas.HelpPage.SampleGeneration;
 using $rootnamespace$.Areas.HelpPage;
 using $rootnamespace$.Models;
 
@@ -20,6 +21,7 @@ namespace $rootnamespace$.Controllers
   /// Allows api endpoints to be imported into postman
   /// </summary>
   [RoutePrefix("api/postman")]
+  [ApiExplorerSettings(IgnoreApi = true)] 
   public class PostmanApiController : ApiController
   {
     /// <summary>
@@ -57,11 +59,12 @@ namespace $rootnamespace$.Controllers
       {
         Id = Guid.NewGuid(),
         Name = "$rootnamespace$",
+        Description = "",
+        Order = new Collection<Guid>(),
         Timestamp = DateTime.Now.Ticks,
-        Requests = new Collection<PostmanRequestGet>(),
         Folders = new Collection<PostmanFolderGet>(),
-        Synced = false,
-        Description = ""
+        Requests = new Collection<PostmanRequestGet>(),
+        Synced = false
       };
 
 
@@ -81,9 +84,10 @@ namespace $rootnamespace$.Controllers
         {
           Id = Guid.NewGuid(),
           CollectionId = postManCollection.Id,
+          Collection = postManCollection.Id,
           Name = controllerName,
           Description = string.Format("Api Methods for {0}", controllerName),
-          CollectionName = "api",
+          CollectionName = "$rootnamespace$",
           Order = new Collection<Guid>()
         };
 
@@ -135,7 +139,8 @@ namespace $rootnamespace$.Controllers
             DescriptionFormat = "markdown",
             Version = "beta",
             Responses = new Collection<string>(),
-            PathVariables = pathVariables
+            PathVariables = pathVariables,
+            Folder = postManFolder.Id
           };
 
           postManFolder.Order.Add(request.Id); // add to the folder

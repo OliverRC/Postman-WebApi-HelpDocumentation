@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using Newtonsoft.Json;
 
-namespace $rootnamespace$.Models
+namespace $rootnamespace$.Models.Postman
 {
-  using Newtonsoft.Json;
-
   /// <summary>
   ///     Object that describes a [Postman](http://getpostman.com) folder
   /// </summary>
@@ -47,5 +44,11 @@ namespace $rootnamespace$.Models
     /// </summary>
     [JsonProperty(PropertyName = "collection_id")]
     public Guid CollectionId { get; set; }
+
+    /// <summary>
+    ///  the collection
+    /// </summary>
+    [JsonProperty(PropertyName = "collection")]
+    public Guid Collection { get; set; }
   }
 }

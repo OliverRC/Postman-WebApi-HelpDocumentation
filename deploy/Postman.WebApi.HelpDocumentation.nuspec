@@ -2,13 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Postman.WebApi.HelpDocumentation</id>
-    <version>1.0.0.2</version>
+    <version>1.0.0.3</version>
     <authors>Oliver Rivett-Carnac</authors>
-	<title>Postman MVC WebApi Help Documentation</title>
+	  <title>Postman MVC WebApi Help Documentation</title>
     <description>Allows developers expose their API endpoints to that they can be imported into postman</description>
-	<projectUrl>https://github.com/OliverRC/Postman-WebApi-HelpDocumentation</projectUrl>
-	<tags>MVC WebApi Postman REST Documentation Help</tags>
-    <releaseNotes>Made release ready for GitHub, added dependency on Microsoft.AspNet.WebApi.HelpPage</releaseNotes>
+	  <projectUrl>https://github.com/OliverRC/Postman-WebApi-HelpDocumentation</projectUrl>
+	  <tags>MVC WebApi Postman REST Documentation Help</tags>
+    <releaseNotes>Json format updated to cater for Postman Packaged app changes</releaseNotes>
 	<dependencies> 
      <group>
       <dependency id="Microsoft.AspNet.WebApi.HelpPage" version="[5.1.2,)"/>
