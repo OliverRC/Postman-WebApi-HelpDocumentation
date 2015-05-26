@@ -9,10 +9,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
-
-using $rootnamespace$.Areas.HelpPage.SampleGeneration;
 using $rootnamespace$.Areas.HelpPage;
-using $rootnamespace$.Models;
 
 namespace $rootnamespace$.Controllers
 {

@@ -71,6 +71,15 @@ Sometimes the default values for types are not good enough so it is useful to po
       }
     });
 
+
+
 ### Changelog ###
+#### 1.0.0.4 ####
+- Tweaked namespaces that shouldn't have been there
 #### 1.0.0.3 ####
 - Json format updated to be work in new Postman packaged app
+
+## Contributing ##
+### Building Package ###
+    
+    NuGet.exe pack deploy\Postman.WebApi.HelpDocumentation.nuspec -OutputDirectory dist\
