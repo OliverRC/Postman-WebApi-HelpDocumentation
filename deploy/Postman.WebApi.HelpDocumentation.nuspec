@@ -2,13 +2,17 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Postman.WebApi.HelpDocumentation</id>
-    <version>1.0.0.4</version>
+    <version>1.0.0.5</version>
     <authors>Oliver Rivett-Carnac</authors>
 	  <title>Postman MVC WebApi Help Documentation</title>
     <description>Allows developers expose their API endpoints to that they can be imported into postman</description>
+    <licenseUrl>http://opensource.org/licenses/mit</licenseUrl>
 	  <projectUrl>https://github.com/OliverRC/Postman-WebApi-HelpDocumentation</projectUrl>
 	  <tags>MVC WebApi Postman REST Documentation Help</tags>
-    <releaseNotes>Tweaked namespaces that shouldn't have been there</releaseNotes>
+    <releaseNotes>
+      1.0.0.5 - Allow a customisation of the request naming style. Url or Action Name.
+      1.0.0.4 - Tweaked namespaces that shouldn't have been there.
+    </releaseNotes>
 	<dependencies> 
      <group>
       <dependency id="Microsoft.AspNet.WebApi.HelpPage" version="[5.1.2,)"/>

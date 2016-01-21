@@ -21,16 +21,17 @@ namespace $rootnamespace$.Controllers
   [ApiExplorerSettings(IgnoreApi = true)] 
   public class PostmanApiController : ApiController
   {
+    private readonly Regex _pathVariableRegEx = new Regex("\\{([A-Za-z0-9-_]+)\\}", RegexOptions.ECMAScript | RegexOptions.Compiled);
+    private readonly Regex _urlParameterVariableRegEx = new Regex("=\\{([A-Za-z0-9-_]+)\\}", RegexOptions.ECMAScript | RegexOptions.Compiled);
+    private readonly RequestNamingStyle _requestNamingStyle;
+
     /// <summary>
     ///     Produce [POSTMAN](http://www.getpostman.com) related responses
     /// </summary>
     public PostmanApiController()
     {
-      // exists for documentation purposes
+      _requestNamingStyle = RequestNamingStyle.Url;
     }
-
-    private readonly Regex _pathVariableRegEx = new Regex("\\{([A-Za-z0-9-_]+)\\}", RegexOptions.ECMAScript | RegexOptions.Compiled);
-    private readonly Regex _urlParameterVariableRegEx = new Regex("=\\{([A-Za-z0-9-_]+)\\}", RegexOptions.ECMAScript | RegexOptions.Compiled);
 
     /// <summary>
     ///     Get a postman collection of all visible Api
@@ -122,7 +123,7 @@ namespace $rootnamespace$.Controllers
           {
             CollectionId = postManCollection.Id,
             Id = Guid.NewGuid(),
-            Name = apiDescription.RelativePath,
+            Name = ResolvePostmanRequestGetName(apiDescription),
             Description = apiDescription.Documentation,
             Url = url,
             Method = apiDescription.HttpMethod.Method,
@@ -149,6 +150,52 @@ namespace $rootnamespace$.Controllers
 
       return postManCollection;
     }
+
+    private string ResolvePostmanRequestGetName(ApiDescription apiDescription)
+    {
+      switch (_requestNamingStyle)
+      {
+        case RequestNamingStyle.Url:
+          return apiDescription.RelativePath;
+        case RequestNamingStyle.ActionName:
+          return HumanFriendlyActionName(apiDescription.ActionDescriptor.ActionName);
+        default:
+          throw new ArgumentOutOfRangeException();
+      }
+    }
+
+    private string HumanFriendlyActionName(string actionName)
+    {
+      var split = new List<string>();
+
+      var temp = string.Empty;
+      foreach (var character in actionName)
+      {
+        if (character >= 'a' && character <= 'z')
+        {
+          temp = temp + character;
+        }
+        else
+        {
+          split.Add(temp);
+          temp = string.Empty + character;
+        }
+      }
+
+      // No need to add 'Async' onto the end.
+      if (!string.Equals(temp, "Async", StringComparison.InvariantCultureIgnoreCase))
+      {
+        split.Add(temp);
+      }
+
+      return string.Join(" ", split);
+    }
+  }
+
+  internal enum RequestNamingStyle
+  {
+    Url,
+    ActionName
   }
 
   /// <summary>

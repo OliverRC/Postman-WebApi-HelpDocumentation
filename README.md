@@ -20,6 +20,19 @@ It is based on the original answer to a question on Stack Overflow
 
     Collections -> Import -> Import from a Url -> Success!
 
+### Customization
+
+Sometime one prefers to use a "human friendly" name for the requests.
+To do so simply edit the PostManController constructor.
+
+    public PostmanApiController()
+    {
+      _requestNamingStyle = RequestNamingStyle.Url;
+    }
+	
+There are two options:
+Url and ActionName (split on Uppercase and drops "Async" keyword.)
+	
 ## Improve Documentation
 ### Enable Xml Comments
 1.  Project Properties -> Build -> Tick "XML documentation file"
