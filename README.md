@@ -4,7 +4,8 @@ Postman WebApi Help Documentation
 ### Nuget Package
 [Postman MVC WebApi Help Documentation](https://www.nuget.org/packages/Postman.WebApi.HelpDocumentation)
 
-Allows developers expose their WebAPI endpoints so they can be imported into postman as a collection
+Allows developers expose their WebAPI endpoints so they can be imported into postman as a collection.
+It generates json that conforms to the [Postman Collection Format v1.0.0](https://schema.getpostman.com/json/collection/latest/docs/index.html).
 
 #### Source 
 It is based on the original answer to a question on Stack Overflow
@@ -87,8 +88,15 @@ Sometimes the default values for types are not good enough so it is useful to po
 
 
 ### Changelog ###
+#### 1.0.0.6 ####
+- Made sure schema conformed to Postman json schema file
+
+#### 1.0.0.5 ####
+- Allow a customisation of the request naming style. Url or Action Name.
+
 #### 1.0.0.4 ####
 - Tweaked namespaces that shouldn't have been there
+
 #### 1.0.0.3 ####
 - Json format updated to be work in new Postman packaged app
 
