@@ -9,7 +9,7 @@ It generates json that conforms to the [Postman Collection Format v1.0.0](https:
 
 #### Source
 It is based on the original answer to a question on Stack Overflow
-[How to generate JSON Postman Collections from a WebApi2 project using WebApi HelpPages that are suitable for import](http://stackoverflow.com/questions/23158379/how-to-generate-json-postman-collections-from-a-webapi2-project-using-webapi-hel) by [Robert H. Engelhardt (rheone)](http://stackoverflow.com/users/1090923/rheone) and is released under a [Creative Commons Attribution-ShareAlike 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/) licnece.
+[How to generate JSON Postman Collections from a WebApi2 project using WebApi HelpPages that are suitable for import](http://stackoverflow.com/questions/23158379/how-to-generate-json-postman-collections-from-a-webapi2-project-using-webapi-hel) by [Robert H. Engelhardt (rheone)](http://stackoverflow.com/users/1090923/rheone) and is released under a [Creative Commons Attribution-ShareAlike 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/) licence.
 
 ##Getting Started
 
