@@ -7,9 +7,9 @@ Postman WebApi Help Documentation
 Allows developers expose their WebAPI endpoints so they can be imported into postman as a collection.
 It generates json that conforms to the [Postman Collection Format v1.0.0](https://schema.getpostman.com/json/collection/latest/docs/index.html).
 
-#### Source 
+#### Source
 It is based on the original answer to a question on Stack Overflow
-[How to generate JSON Postman Collections from a WebApi2 project using WebApi HelpPages that are suitable for import](http://stackoverflow.com/questions/23158379/how-to-generate-json-postman-collections-from-a-webapi2-project-using-webapi-hel) by [rheone](http://stackoverflow.com/users/1090923/rheone)
+[How to generate JSON Postman Collections from a WebApi2 project using WebApi HelpPages that are suitable for import](http://stackoverflow.com/questions/23158379/how-to-generate-json-postman-collections-from-a-webapi2-project-using-webapi-hel) by [Robert H. Engelhardt (rheone)](http://stackoverflow.com/users/1090923/rheone) and is released under a [Creative Commons Attribution-ShareAlike 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/) licnece.
 
 ##Getting Started
 
@@ -30,10 +30,10 @@ To do so simply edit the PostManController constructor.
     {
       _requestNamingStyle = RequestNamingStyle.Url;
     }
-	
+
 There are two options:
 Url and ActionName (split on Uppercase and drops "Async" keyword.)
-	
+
 ## Improve Documentation
 ### Enable Xml Comments
 1.  Project Properties -> Build -> Tick "XML documentation file"
@@ -44,7 +44,7 @@ Url and ActionName (split on Uppercase and drops "Async" keyword.)
 
 5. Provide xml comments on controller and actions
 
-### Provide Actual Types 
+### Provide Actual Types
 If using *HttpRequestMessage* or *HttpResponseMessage* the documentation won't provide meaningful examples in either the Help Page or the Postman Help
 
 To cater for this abstration you can configure the WebApi Help with the actual types
@@ -88,6 +88,9 @@ Sometimes the default values for types are not good enough so it is useful to po
 
 
 ### Changelog ###
+#### 1.0.0.7 ####
+- Corrected licensing issue
+
 #### 1.0.0.6 ####
 - Made sure schema conformed to Postman json schema file
 
@@ -102,5 +105,5 @@ Sometimes the default values for types are not good enough so it is useful to po
 
 ## Contributing ##
 ### Building Package ###
-    
+
     NuGet.exe pack deploy\Postman.WebApi.HelpDocumentation.nuspec -OutputDirectory dist\
