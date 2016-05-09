@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace $rootnamespace$.Models.Postman
 {
-  // <summary>
+  /// <summary>
   ///     [Postman](http://getpostman.com) collection representation
   /// </summary>
   public class PostmanCollectionGet
